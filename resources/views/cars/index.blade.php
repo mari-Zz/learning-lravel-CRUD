@@ -9,7 +9,6 @@
                 Cars
             </h1>
         </div>
-        {{ dd(Auth::user()) }}
         <div style="padding: 10px">
             <a href="cars/create" style="border-bottom: 2px dotted grey; color: grey; margin:0 10px ">
                 add a new car &rarr;
