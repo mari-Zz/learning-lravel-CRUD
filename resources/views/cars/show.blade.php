@@ -2,27 +2,29 @@
 
 @section('content')
 
+    <div class="container">
     <div style="text-align: center">
         <img 
+            class="rounded mx-auto d-block img-fluid"
             src="{{ asset('images/' . $car->image_path) }}" 
             alt="{{ $car->name }}">
-        <h1 style="font-size: 3rem">
+        <h1 class="fs-1 text-primary">
             {{ $car->name }}
         </h1>
     </div>
 
-    <div style="text-align: center">
-        <span style="font-size: 1rem; margin:0 20px;font-weight:bold">
+    <div class="d-flex flex-column align-items-center">
+        <h6 class="fs-5 mx-3 fw-bold">
             Founded: {{ $car->founded }}
-        </span>
+        </h6>
 
-        <p style="margin: 0 20;">
+        <p class="m-1">
             {{ $car->descriotion }}
         </p>
-
-        <hr style="background-color:cornflowerblue;  margin: 10 25px; height:2px;" > 
     </div>
 
+    <hr class="m-3" style="background-color:cornflowerblue;"  > 
+    
    <table style="margin: 10px auto">
        <tr style="background-color: cornflowerblue">
             <th style="width: 33%; border: 4px solid grey">
@@ -73,5 +75,5 @@
            <p>nothing found!</p>
        @endforelse
    </P>
-    
+</div>
 @endsection

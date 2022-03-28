@@ -3,14 +3,14 @@
 
 @section('content')
 
-    <div>
-        <div style="text-align: center">
-            <h1 style="font-size: 3rem">
+    <div class="container d-flex flex-column">
+        <div class="align-self-center">
+            <h1 class="fs-1">
                 Cars
             </h1>
         </div>
-        <div style="padding: 10px">
-            <a href="cars/create" style="border-bottom: 2px dotted grey; color: grey; margin:0 10px ">
+        <div class="p-3">
+            <a href="cars/create" type="button" class="btn btn-secondary">
                 add a new car &rarr;
             </a>
         </div>
@@ -19,31 +19,31 @@
             @foreach ($cars as $car)
             <div class="m-auto">
                 <div style="float: right;">
-                    <a href="cars/{{ $car->id }}/edit" style="border-bottom: 2px dotted grey; color: green; margin:0 10px ">
+                    <a href="cars/{{ $car->id }}/edit" type="button" class="btn btn-success">
                         Edit &rarr;
                     </a>
 
                     <form action="/cars/{{ $car->id }}" method="POST">
                         @csrf
                         @method('delete')
-                        <button type="delete" style="border-bottom: 2px dotted grey; color: red; margin:0 10px ">delete &rarr;</button>
+                        <button type="delete" type="button" class="btn btn-danger">delete &rarr;</button>
                     </form>
                 </div>
-                <span style="font-size: 1rem; margin:0 20px;font-weight:bold">
+                <h6 class="fs-5 mx-3 fw-bold">
                     Founded: {{ $car->founded }}
-                </span>
+                </h6>
 
-                <h2 style="font-size: 1.5rem; margin: 10px 20px;color:cornflowerblue;font-weight:bold">
+                <h2 class="text-primary fs-2 m-3 fw-bold" >
                     <a href="/cars/{{ $car->id }}">
                         {{ $car->name }}
                     </a>
                 </h2>
 
-                <p style="margin: 0 20;">
+                <p class="m-3">
                     {{ $car->descriotion }}
                 </p>
 
-                <hr style="background-color:cornflowerblue;  margin: 10 25px; height:2px;" > 
+                <hr class="m-3" style="background-color:cornflowerblue;" > 
             </div>
                 
             @endforeach
